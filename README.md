@@ -1,6 +1,6 @@
 # ComputerGraphics
 
-##### 你已經完成了哪些任務?
+#### 你已經完成了哪些任務?
 ###### 1.Line algorithm 線演算法 
 ###### 2.Circle Algorithm 圓演算法 
 ###### 3.Ellipse Algorithm橢圓演算法 
@@ -8,7 +8,7 @@
 ###### 5.Eraser橡皮
 <img width="1238" height="714" alt="image" src="https://github.com/user-attachments/assets/a022df80-2c35-4102-98d1-70693f953ad4" />
 
-##### 你作品的一些截圖?
+#### 你作品的一些截圖?
 ###### 1.Line algorithm 線演算法 
 <img width="1236" height="513" alt="image" src="https://github.com/user-attachments/assets/a03478cc-bf55-4a9f-bad1-8c6662128245" />
 
@@ -18,7 +18,7 @@
 ###### 3.Ellipse Algorithm橢圓演算法  4.Bézier Curve Algorithm貝塞爾曲線演算法 5.Eraser橡皮
 <img width="1236" height="458" alt="image" src="https://github.com/user-attachments/assets/c4247a2c-3536-4553-9240-e37323e0c0fe" />
 
-##### 您是如何完成這些任務的（解釋關鍵程式碼片段、使用的演算法或您的發現等）?
+#### 您是如何完成這些任務的（解釋關鍵程式碼片段、使用的演算法或您的發現等）?
 
 ###### 發現 Point、Line、Polygon都有drawShape() 的 CGLine(p1.x, p1.y, p2.x, p2.y)，找 CGLine函式，看到todo作業。
 

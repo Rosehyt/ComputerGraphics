@@ -8,6 +8,7 @@
 - **Ellipse Algorithm**橢圓演算法 
 - **Bézier Curve Algorithm**貝塞爾曲線演算法 
 - **Eraser**橡皮
+- **Spray** 噴漆
 <img width="1238" height="714" alt="image" src="https://github.com/user-attachments/assets/a022df80-2c35-4102-98d1-70693f953ad4" />
 
 ---
@@ -21,6 +22,9 @@
 
 ### 3.Ellipse Algorithm橢圓演算法  4.Bézier Curve Algorithm貝塞爾曲線演算法 5.Eraser橡皮
 <img width="1236" height="458" alt="image" src="https://github.com/user-attachments/assets/c4247a2c-3536-4553-9240-e37323e0c0fe" />
+### 6. Spray噴漆
+<img width="1238" height="616" alt="螢幕擷取畫面 2025-10-07 212935" src="https://github.com/user-attachments/assets/ed9fa9df-a8ec-438d-9283-c36982ee1a3b" />
+
 
 ---
 

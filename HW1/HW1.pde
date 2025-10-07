@@ -5,6 +5,7 @@ ShapeButton ellipseButton;
 ShapeButton curveButton;
 ShapeButton pencilButton;
 ShapeButton eraserButton;
+ShapeButton sprayButton;  //噴漆筆
 
 Button clearButton;
 
@@ -162,7 +163,16 @@ public void initButton() {
 
     eraserButton.setBoxAndClickColor(color(250), color(150));
     shapeButton.add(eraserButton);
-
+    
+    sprayButton = new ShapeButton(255, 10, 30, 30) {
+       @Override
+      public Renderer getRendererType() {
+        return new SprayRenderer();
+      }
+    };
+    sprayButton.setImage(loadImage("spray.png")); // 請放一張噴漆圖示 spray.png
+    sprayButton.setBoxAndClickColor(color(250), color(150));
+    shapeButton.add(sprayButton);
 }
 
 public void keyPressed() {

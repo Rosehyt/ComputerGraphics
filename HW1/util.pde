@@ -241,3 +241,17 @@ public float distance(Vector3 a, Vector3 b) {
     Vector3 c = a.sub(b);
     return sqrt(Vector3.dot(c, c));
 }
+
+public void CGSpray(Vector3 p, float radius, int density) {
+    for (int i = 0; i < density; i++) {
+        // 隨機角度與距離 (均勻分佈在圓內)
+        float angle = random(0, TWO_PI);
+        float r = sqrt(random(0, 1)) * radius; // 使用 sqrt() 讓點分布更自然
+        float dx = r * cos(angle);
+        float dy = r * sin(angle);
+
+        int alpha = (int)random(80, 200); // 模擬噴霧透明度
+        int sprayColor = color(0, 0, 255, alpha); // 可換成目前筆顏色
+        drawPoint((int)(p.x + dx), (int)(p.y + dy), sprayColor);
+    }
+}

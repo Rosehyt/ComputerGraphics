@@ -284,3 +284,34 @@ class CurveRenderer implements Renderer{
       
   }
 }
+
+public class SprayRenderer implements Renderer {
+    float sprayRadius = 20;  // 噴漆範圍
+    int sprayDensity = 80;   // 噴點數量
+    ArrayList<Vector3> sprayPoints = new ArrayList<Vector3>();
+    boolean drawing = false;
+
+    @Override
+    public void render() {
+        if (!shapeRenderer.checkInBox(new Vector3(mouseX, mouseY, 0))) return;
+
+        if (mousePressed && mouseButton == LEFT) {
+            drawing = true;
+            for (int i = 0; i < sprayDensity; i++) {
+                float angle = random(TWO_PI);
+                float r = random(sprayRadius);
+                float dx = cos(angle) * r;
+                float dy = sin(angle) * r;
+                Vector3 p = new Vector3(mouseX + dx, mouseY + dy, 0);
+                sprayPoints.add(p);
+                stroke(0, 100);
+                point(p.x, p.y);
+            }
+        } else if (drawing) {
+            // 放開滑鼠時，將噴漆點保存為一個 Shape
+            drawing = false;
+            shapeRenderer.addShape(new Spray(new ArrayList<Vector3>(sprayPoints)));
+            sprayPoints.clear();
+        }
+    }
+}

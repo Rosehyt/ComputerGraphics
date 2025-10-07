@@ -6,6 +6,7 @@
 #### 3.Ellipse Algorithm橢圓演算法 
 #### 4.Bézier Curve Algorithm貝塞爾曲線演算法 
 #### 5.Eraser橡皮
+#### 6.Spray噴漆
 <img width="1238" height="714" alt="image" src="https://github.com/user-attachments/assets/a022df80-2c35-4102-98d1-70693f953ad4" />
 
 ## 你作品的一些截圖?
@@ -17,6 +18,8 @@
 
 #### 3.Ellipse Algorithm橢圓演算法  4.Bézier Curve Algorithm貝塞爾曲線演算法 5.Eraser橡皮
 <img width="1236" height="458" alt="image" src="https://github.com/user-attachments/assets/c4247a2c-3536-4553-9240-e37323e0c0fe" />
+#### 6.Spray噴漆
+<img width="1238" height="616" alt="image" src="https://github.com/user-attachments/assets/0a1f2dfe-353c-4eac-862e-606b8fc90551" />
 
 ## 您是如何完成這些任務的（解釋關鍵程式碼片段、使用的演算法或您的發現等）?
 

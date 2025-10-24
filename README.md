@@ -1,66 +1,42 @@
 # ComputerGraphics
 
 ## 你已經完成了哪些任務?
-#### 1.二維變換矩陣 (2D Transformation Matrix)
-#### 2.Circle Algorithm 圓演算法 
-#### 3.Ellipse Algorithm橢圓演算法 
-#### 4.Bézier Curve Algorithm貝塞爾曲線演算法 
-#### 5.Eraser橡皮
-<img width="1238" height="714" alt="image" src="https://github.com/user-attachments/assets/a022df80-2c35-4102-98d1-70693f953ad4" />
+#### 1.平移矩陣
+#### 2.旋轉矩陣（Z 軸）
+#### 3.縮放矩陣
+#### 4.pnpoly 點在多邊形內判定
+#### 5.findBoundBox 找邊界框
+#### 6.Sutherland–Hodgman 多邊形裁剪 
+
 
 ## 你作品的一些截圖?
-#### 1.Line algorithm 線演算法 
-<img width="1236" height="513" alt="image" src="https://github.com/user-attachments/assets/a03478cc-bf55-4a9f-bad1-8c6662128245" />
+<img width="1229" height="740" alt="image" src="https://github.com/user-attachments/assets/426d42a1-a825-41b9-8fdb-2f9737a51883" />
 
-#### 2.Circle Algorithm 圓演算法 
-<img width="1230" height="687" alt="image" src="https://github.com/user-attachments/assets/53362580-8a11-4477-bd68-410d41a1e715" />
-
-#### 3.Ellipse Algorithm橢圓演算法  4.Bézier Curve Algorithm貝塞爾曲線演算法 5.Eraser橡皮
-<img width="1236" height="458" alt="image" src="https://github.com/user-attachments/assets/c4247a2c-3536-4553-9240-e37323e0c0fe" />
+<img width="1237" height="753" alt="image" src="https://github.com/user-attachments/assets/1720b0e8-c069-487f-8414-05d2e8e1960c" />
 
 ## 您是如何完成這些任務的（解釋關鍵程式碼片段、使用的演算法或您的發現等）?
+> 在本次作業中，我使用了 ChatGPT
+- 確認 矩陣乘法的正確實作方式
+- 調整 pnpoly 內部判定公式方向
+- 撰寫 Sutherland–Hodgman 裁剪演算法的邏輯順序
+- 調整程式碼架構與繪製函式的相容性
+>| 任務                                  | 狀態   | 說明                |
+>| ------------------------------------- | ---- | ----------------- |
+>| `Matrix4.makeTrans()`                 | ✅ 完成 | 生成平移矩陣            |
+>| `Matrix4.makeRotZ()`                  | ✅ 完成 | 生成繞 Z 軸的旋轉矩陣      |
+>| `Matrix4.makeScale()`                 | ✅ 完成 | 生成縮放矩陣            |
+>| `util.pnpoly()`                       | ✅ 完成 | 判斷點是否在多邊形內        |
+>| `util.findBoundBox()`                 | ✅ 完成 | 計算多邊形邊界框          |
+>| `util.Sutherland_Hodgman_algorithm()` | ✅ 完成 | 實作多邊形裁剪演算法，防止超出畫布 |
 
-#### 發現 Point、Line、Polygon都有drawShape() 的 CGLine(p1.x, p1.y, p2.x, p2.y)，找 CGLine函式，看到todo作業。
-
-> 總要做 CGLine(float x1, float y1, float x2, float y2)  、CGCircle(float x, float y, float r)  、CGEllipse(float x, float y, float r1, float r2)  、CGCurve(Vector3 p1, Vector3 p2, Vector3 p3, Vector3 p4)  、CGEraser(Vector3 p1, Vector3 p2) 五個函示。
 #### 透過這些的訊息詢問chatGPT 順便告訴他禁止使用以下內置函數：
 
-> line(x1,y1,x2,y2);  
-> circle(x,y,r);  
-> ellipse(x,y,r1,r2);  
-> bezier(x1,y1,x2,y2,x3,y3,x4,y4);  
-> rect(x,y,w,h);
-> 
-> beginShape();  
-> vertex(x,y);  
-> endShape();
+> `line(x1,y1,x2,y2);`  
+> `circle(x,y,r);`  
+> `ellipse(x,y,r1,r2);`  
+> `bezier(x1,y1,x2,y2,x3,y3,x4,y4);`  
+> `rect(x,y,w,h);`  
+> `beginShape();`  
+> `vertex(x,y);`  
+> `endShape();` 
 
-- 畫出直線 :  
-> 它在每次畫點時會判斷：
-> 接下來的點是畫在「右邊」還是「右下角」（或右上角）
-> 使用 誤差值 去逼近理想的斜率，但只用整數運算（效率高）
-
-
-- Midpoint Circle Algorithm（中點圓演算法）:  
-> 只用整數運算
-> 運用圓的對稱性，只計算 1/8 圓，然後用對稱性補出整個圓。
-> 一個圓心在 (x₀, y₀)，半徑為 r 的圓，其所有點 (x, y) 滿足：
-
- (x - x<sub>0</sub>)<sup>2</sup> + (y - y<sub>0</sub>)<sup>2</sup> = r <sup>2</sup>
-
-
-- Midpoint Ellipse Algorithm 畫出橢圓:
-
- (x - x<sub>0</sub>)<sup>2</sup> / r<sub>2</sub><sup>1</sup> + (y - y<sub>0</sub>)<sup>2</sup> / r<sub>2</sub><sup>2</sup> = 1  
->(x0, y0) 為橢圓中心、r1 為 x 軸半徑、r2 為 y 軸半徑
-> 分為兩個區域繪製：  
-> Region 1（斜率 < 1）：沿 X 增加，Y 根據誤差決定要不要減  
-> Region 2（斜率 >= 1）：沿 Y 減少，X 根據誤差決定要不要加
-
-- 四階貝茲曲線（Cubic Bézier Curve） 的繪製 :
->p1（起點）、p2（控制點1）、p3（控制點2）、p4(終點)
-  
- B(t) = (1-t)<sup>3</sup>*P<sub>1</sub> + 3(1-t)<sup>2</sup>*t*P<sub>2</sub> + 3(1-t)t<sup>2</sup>*P<sub>3</sub> + t<sup>3</sup>*P<sub>4</sub>
-
-- CGEraser(Vector3 p1, Vector3 p2) 函數的目的是:  
->擦除畫面上 p1 到 p2 定義的區域，也就是畫一個矩形，並用背景顏色 color(250) 去蓋掉這區域內的所有點。

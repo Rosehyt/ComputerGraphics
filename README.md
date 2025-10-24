@@ -1,7 +1,7 @@
 # ComputerGraphics
 
 ## 你已經完成了哪些任務?
-#### 1.Line algorithm 線演算法 
+#### 1.二維變換矩陣 (2D Transformation Matrix)
 #### 2.Circle Algorithm 圓演算法 
 #### 3.Ellipse Algorithm橢圓演算法 
 #### 4.Bézier Curve Algorithm貝塞爾曲線演算法 

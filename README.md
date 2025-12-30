@@ -9,6 +9,8 @@
 #### 完成光照公式套用與法向量插值的測試
 
 ## 你作品的一些截圖?
+<img width="991" height="629" alt="image" src="https://github.com/user-attachments/assets/b289527b-847e-49a4-b786-889c31a36844" />
+
 
 ## 您是如何完成這些任務的（解釋關鍵程式碼片段、使用的演算法或您的發現等）?
 
